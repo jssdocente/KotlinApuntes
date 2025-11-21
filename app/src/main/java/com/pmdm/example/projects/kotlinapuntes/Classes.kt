@@ -29,9 +29,11 @@ fun main() {
     println("\n")
 
     println("--- 4. Clase 'Articulo_V4' (Kotlin: Constructor Secundario y Valores por Defecto) ---")
-    val art1 = Articulo_V4("Libro Kotlin") // Constructor primario, usa valores por defecto para los demás
+    val art1 =
+        Articulo_V4("Libro Kotlin") // Constructor primario, usa valores por defecto para los demás
     val art2 = Articulo_V4("Teclado", 75.0) // Constructor primario, precio personalizado
-    val art3 = Articulo_V4("Monitor", 150.0, "Electrónica") // Constructor primario, todo personalizado
+    val art3 =
+        Articulo_V4("Monitor", 150.0, "Electrónica") // Constructor primario, todo personalizado
     val art4 = Articulo_V4("USB") // Constructor secundario sin precio ni categoría
     val art5 = Articulo_V4("Ratón", 25.0) // Constructor secundario con precio
     println("Art. 1: ${art1.nombre} (${art1.precio}€) [${art1.categoria}]")
@@ -69,14 +71,24 @@ class Usuario_V1(nombreParam: String, emailParam: String) {
     private val email: String // Propiedad inmutable (val)
 
     init { // Bloque de inicialización que se ejecuta al crear el objeto
+        //Este bloque, es como si el constructor se dividiera en 2, una parte dentro de la definición de la clase,
+        // y la otra en este bloque.
         this.nombre = nombreParam
         this.email = emailParam
         println("Usuario_V1 creado: ${this.nombre}")
     }
 
-    fun getNombre(): String { return nombre } // Getter manual
-    fun setNombre(nuevoNombre: String) { this.nombre = nuevoNombre } // Setter manual
-    fun getEmail(): String { return email } // Getter manual
+    fun getNombre(): String {
+        return nombre
+    } // Getter manual
+
+    fun setNombre(nuevoNombre: String) {
+        this.nombre = nuevoNombre
+    } // Setter manual
+
+    fun getEmail(): String {
+        return email
+    } // Getter manual
 
     fun generarSaludo(): String = "Hola, soy ${nombre}." // Método simple
 }
@@ -91,6 +103,7 @@ class Usuario_V2(var nombre: String, val email: String) { // 'var' para nombre, 
     init {
         println("Usuario_V2 creado: ${this.nombre}")
     }
+
     fun generarSaludo(): String = "Hola, soy ${nombre} (versión Kotlin)."
 }
 

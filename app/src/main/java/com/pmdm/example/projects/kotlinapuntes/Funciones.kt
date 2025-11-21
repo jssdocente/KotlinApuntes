@@ -42,7 +42,7 @@ fun main() {
     println("---")
 
     // Caso 4: Todos los parámetros personalizados.
-    configurarNotificacion("Recordatorio de pago.", tipo = "Finanzas", urgente = true)
+    configurarNotificacion("Recordatorio de pago.",  urgente = true,tipo = "Finanzas")
     println("---")
 
     // Caso 5: Uso de parámetros nombrados para cambiar el orden, mejorando la legibilidad.
